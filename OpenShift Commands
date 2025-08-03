@@ -1,0 +1,3 @@
+#Openshift Delete Multiple Groups
+#EX: delete all groups start with 'CN'
+oc get groups -o name | grep 'CN=' | sed 's|group.user.openshift.io/||' | xargs -I {} oc delete group {}
