@@ -1,0 +1,12 @@
+kind: LDAPSyncConfig
+apiVersion: v1
+url: ldap://ad.example.com:389
+activeDirectory:
+ usersQuery:
+ baseDN: "ou=users,dc=example,dc=com"
+ scope: sub
+ derefAliases: never
+ filter: (objectclass=person)
+ pageSize: 0
+ userNameAttributes: [ mail ]
+ groupMembershipAttributes: [ memberOf ]
